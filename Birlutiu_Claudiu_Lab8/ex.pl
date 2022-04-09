@@ -69,4 +69,22 @@ convert_tree_it_c(t(K, L, R), t(K, NL, NR)):-convert_tree_it_c(L, NL), convert_t
 
 
 %%Exercitiul 7 Aplatizează o listă adâncă incompletă  
+flat_il([], _):-!.
+flat_il(T, _):- var(T), !.
+flat_il([H|T], [H|R]):- atomic(H), !, flat_il(T,R). 
+flat_il([H|T], R):- flat_il(H,R1), flat_il(T,R2), append_it(R2,R1), R=R1.
+
+%%Exercitiul 8 calculare diametru
+treeIncomplet2(t(7, t(5, t(3,_,_), t(6,_,_)), t(11,t(9,_,_),_))).
+diameter(T,0):-var(T), !.
+diameter(t(_, L, R), D):- diameter(L, D1), diameter(R, D2), height(L, H1), height(R, H2), H3 is H1+H2+1, max(D1, D2, D3), max(D3, H3, D).
+
+
+%%Exercitiul 9
+append_it_3(L1, L2, R):-var(L1), !,R=L2.
+append_it_3([X|T], L2, [X|R]):- append_it_3(T, L2, R). 
+
+
+subl_il(S, L) :- convert_it_c(S, Sl), convert_it_c(L, Ll),
+    append(R, _, Ll), append(_, Sl, R), !.
 
