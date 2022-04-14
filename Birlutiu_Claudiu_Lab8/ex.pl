@@ -85,6 +85,6 @@ append_it_3(L1, L2, R):-var(L1), !,R=L2.
 append_it_3([X|T], L2, [X|R]):- append_it_3(T, L2, R). 
 
 
-subl_il(S, L) :- convert_it_c(S, Sl), convert_it_c(L, Ll),
-    append(R, _, Ll), append(_, Sl, R), !.
+subl_il(S, L) :- 
+    append(R, _, L), append(_, S, R), !.
 
