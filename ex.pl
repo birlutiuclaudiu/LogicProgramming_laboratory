@@ -59,3 +59,12 @@ print_all:-memo_fib(N,F),
         fail. 
 print_all.
 
+
+
+%%Exercitiu 1
+convert_in_def(L, LS, LE, R):- append(L, LE, R), LS=R, !.  
+convert_def_in(L, R):- append(L, _, R), !.  
+
+%5Exercitiul 2
+convert_com_def(L, RS, RE, R):- append(L, RE, R), RS=R. 
+convert_def_com(LS, _, R):- append(LS, [], R), !.
