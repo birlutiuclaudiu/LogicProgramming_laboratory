@@ -68,3 +68,5 @@ convert_def_in(L, R):- append(L, _, R), !.
 %5Exercitiul 2
 convert_com_def(L, RS, RE, R):- append(L, RE, R), RS=R. 
 convert_def_com(LS, _, R):- append(LS, [], R), !.
+
+%%Exercitiul 3
