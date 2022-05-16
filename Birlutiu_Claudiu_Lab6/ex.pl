@@ -78,5 +78,7 @@ greater([X|T1], [X|T2]) :- greater(T1, T2).
 
 
 
-
+member1(H,[H|_]):-!.
+member1(X,[H|_]):-member1(X,H), !.
+member1(X,[_|T]):-member1(X,T).
 
