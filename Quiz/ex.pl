@@ -67,3 +67,5 @@ delete3(X, [X|T], T).
 delete3(X, [H|T], [H|R]):- delete3(X, T, R).
 is_bst(nil).
 is_bst( t(LL, KL, LR), K, t(RL, KR, RR)):-
+KL < K , K<KR , !, is_bst(t(LL, KL, LR)),
+is_bst()
